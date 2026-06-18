@@ -16,7 +16,8 @@ public class App {
         initSeedData();
 
         // 在本地 8080 Port 啟動輕量級伺服器
-        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+        // 修正核心：將監聽地址改為 0.0.0.0，允許 Render 外網流量掃描與連線
+HttpServer server = HttpServer.create(new InetSocketAddress("0.0.0.0", 8080), 0);
         
         // 1. 前端網頁 HTML 畫面 (GET /)
         server.createContext("/", exchange -> {
