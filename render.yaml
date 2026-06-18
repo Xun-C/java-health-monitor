@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: java-health-monitor
+    runtime: docker
+    repo: https://github.com/Xun-C/java-health-monitor
+    plan: free
+    region: singapore
